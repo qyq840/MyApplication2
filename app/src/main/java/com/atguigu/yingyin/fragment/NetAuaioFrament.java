@@ -5,17 +5,22 @@ package com.atguigu.yingyin.fragment;
 import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.atguigu.yingyin.R;
 import com.atguigu.yingyin.base.BaseFragment;
+import com.atguigu.yingyin.bean.NetAudioBean;
 import com.atguigu.yingyin.utils.Constant;
 
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
-import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
+import java.util.List;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 
 /**
@@ -27,18 +32,16 @@ import org.xutils.x;
 
 public class NetAuaioFrament extends BaseFragment {
 
+    private static final String TAG = NetAuaioFrament.class.getSimpleName();
+    @Bind(R.id.listview)
+    ListView listview;
+    @Bind(R.id.progressbar)
+    ProgressBar progressbar;
+    @Bind(R.id.tv_nomedia)
+    TextView tvNomedia;
 
-
-    @ViewInject(R.id.listview)
-
-    private ListView listview;
-
-
-
-    @ViewInject(R.id.tv_no_media)
-
-    private  TextView tv_no_media;
-
+    private NetAudioFragmentAdapter myAdapter;
+    private List<NetAudioBean.ListBean> datas;
     @Override
 
     public View initView() {
@@ -48,13 +51,12 @@ public class NetAuaioFrament extends BaseFragment {
         View view  = View.inflate(mContext, R.layout.fragment_net_video,null);
 
         //把view注入到xUtils3框中
-
-        x.view().inject(NetAuaioFrament.this,view);
-
+        ButterKnife.bind(this,view);
         return view;
 
     }
 
+     listview
 
 
     @Override
