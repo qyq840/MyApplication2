@@ -33,17 +33,7 @@
         android:orientation="horizontal"
         android:padding="5dp">
 
-        <RadioButton
-            android:id="@+id/rb_local_video"
-            style="@style/bottom_button_style"
-            android:drawableTop="@drawable/rb_local_video_selector"
-            android:text="本地视频" />
 
-        <RadioButton
-            android:id="@+id/rb_local_audio"
-            style="@style/bottom_button_style"
-            android:drawableTop="@drawable/rb_local_audio_selector"
-            android:text="本地音频" />
 
 
         <RadioButton
@@ -53,10 +43,13 @@
             android:text="网络音乐" />
 
 
+
+
+
         <RadioButton
-            android:id="@+id/rb_net_video"
+            android:id="@+id/rb_RecyclerView"
             style="@style/bottom_button_style"
             android:drawableTop="@drawable/rb_net_video_selector"
-            android:text="网络视频" />
+            android:text="RecyclerView" />
     </RadioGroup>
 </LinearLayout>
